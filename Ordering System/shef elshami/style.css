@@ -20,3 +20,10 @@
 .navbar-default .navbar-nav>.active>a{
 	background-image: linear-gradient(to bottom, #f3c5bd 0%,#e86c57 50%,#ea2803 51%,#ff6600 75%,#c72200 100%);
 }
+
+body,html {
+	height :100%;
+	/*background: url('#EFEBE9');*/
+	background-color: #EFEBE9;
+
+}
