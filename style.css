@@ -1,0 +1,90 @@
+.logo-text {
+	display: inline;
+	font-size: 0.9em;
+}
+
+.nav,.navbar-nav,.main-menu {
+	font-size : 0.7em;
+}
+
+.main-container> .navbar {
+	border-bottom: 2px solid yellow;
+	margin: 0px;
+}
+ 
+
+
+  #image1-ss , #image2-ss , #image3-ss {
+  	height: 280px;
+  	object-fit: cover;
+  }
+
+  #slideshowx{
+  	padding: 0px;
+  	margin: 0px;
+  	margin-bottom: 50px;
+  }
+
+  .timings {
+  	/*text-align: right;*/
+  	background-color: orange;
+  	color : white;
+  	width: 50%;
+  	align-content: center;
+  	margin: 0px;
+  	padding: 0px;
+  	padding: 7px 10px 7px 10px;
+  	border-bottom: 1px solid black;
+  }
+
+  .timings>p{
+  	margin: 0px;
+  }
+
+  .title{
+  	font-weight: bold;
+
+  }
+  .viewDelivery{
+  	margin-top: 20px;
+  	border-radius: 20px 20px 20px 20px;
+  	text-align: center;
+  	width: 30%;
+  }
+
+  .date-time {
+  	margin-bottom: 60px;
+  }
+  .content {
+  	padding-left: 40px;
+  	margin-left: 0px;
+  }
+  .country {
+  	font-size: 2em;
+  }
+
+  .order {
+  	color: white;
+  	background-color: orange;
+  	width: 50%;
+  	font-size: 0.8em;
+  }
+
+  .faceInsta img{
+  	padding : 5px;
+  	height: 80px;
+  	width:80px;
+
+  }
+
+  .faceInsta {
+  	margin-right: 30px;
+  }
+
+
+  .footer-container> .navbar {
+	border-top: 2px solid yellow;
+	margin: 0px;
+	margin-top: 20px;
+}
+ 
