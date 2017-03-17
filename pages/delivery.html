@@ -7,8 +7,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <link rel="stylesheet" type="text/css" href="delivery.css">
 </head>
 <body>
@@ -108,7 +107,7 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-8" id="menu-cards">
+		<div class="col-md-9" id="menu-cards">
 			<!-- CARD HERE -->
 			<div class="col-md-6 col-lg-6 col-xs-6">
 				<div class="card">
@@ -131,10 +130,10 @@
 					</div>
 					<div class="row card-price">
 						<div class="col-md-12 col-lg-12">
-							<span>BREAD - 40EGP</span>
+							<span onclick="add('Sandwich Tuna (bread)',40)">BREAD - 40EGP</span>
 						</div>
 						<div class="col-md-12 col-lg-12">
-							<span>SYRIAN BREAD - 40EGP</span>
+							<span onclick="add('Sandwich Tuna (syrian bread)',40)">SYRIAN BREAD - 40EGP</span>
 						</div>
 					</div>
 				</div>
@@ -162,73 +161,43 @@
 					</div>
 					<div class="row card-price">
 						<div class="col-md-12 col-lg-12">
-							<span>BREAD - 40EGP</span>
+							<span onclick="add('Sandwich Tuna (bread)',40)">BREAD - 40EGP</span>
 						</div>
 						<div class="col-md-12 col-lg-12">
-							<span>SYRIAN BREAD - 40EGP</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- END CARD HERE -->
-			<!-- CARD HERE -->
-			<div class="col-md-6 col-lg-6 col-xs-6">
-				<div class="card">
-					<div class="row">
-						<div class="col-md-12 col-lg-12 col-xs-12">
-							<img src="../images/food-img1.jpg" class="card-food">
-						</div>
-						
-					</div>
-					<div class="row card-info">
-						<div class="col-md-8">
-							<h4><b>Sandwich Tuna</b></h4>
-						</div>
-					</div>
-					<div class="row card-info">
-						<div class="col-lg-12">
-							<p class="details">Lorem ipsum dolor sit amet, consectetur adipisicing elit
-							consequat. </p>
-						</div>
-					</div>
-					<div class="row card-price">
-						<div class="col-md-12 col-lg-12">
-							<span>BREAD - 40EGP</span>
-						</div>
-						<div class="col-md-12 col-lg-12">
-							<span>SYRIAN BREAD - 40EGP</span>
+							<span onclick="add('Sandwich Tuna (syrian bread)',40)">SYRIAN BREAD - 40EGP</span>
 						</div>
 					</div>
 				</div>
 			</div>
 			<!-- END CARD HERE -->
 			
+			
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-3">
 			<DIV class = "receipt">
 				<span><b>CURRENT ORDER</b></span>
 				<br>
 				<span style="color: orange">__</span>
 				<br>
-				<p class="empty-order">Your order is empty</p>
+				<div id="ordered">
+					<p  id="empty-order">Your order is empty</p>
+
+				</div>
+				
 				<div style="background-color: #a4a4a4; height : 2.5px; margin-bottom: 2.4px;"></div>
 				<div style="background-color: #a4a4a4; height : 1px;"></div>
 				<table class="table-receipt">
 					<tr>
 						<td>Sub Total:</td>
-						<td>0</td>
+						<td id="subtotal">0</td>
 					</tr>
 					<tr>
 						<td>Campus Delivery/Setup Charge:</td>
-						<td>0</td>
-					</tr>
-					<tr>
-						<td>Taxes:</td>
-						<td>0</td>
+						<td id="deliveryPrice">10</td>
 					</tr>
 					<tr>
 						<td>Grand Total:</td>
-						<td>0</td>
+						<td id="grandtotal">0</td>
 					</tr>
 				</table>
 			</DIV>
@@ -270,8 +239,40 @@
 	    
 	    </div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
-	</nav>
+	</nav>s
 </div>
 
+<script type="text/javascript">
+function priceAll(){
+
+}
+ function add(food,price) {
+ 	var current = $('#ordered').html();
+ 	$('#ordered').html(current+"<b class='removebtn' onclick='remove(this)'>&#x2716; <p class='orderedStyle'>"+food+"</p><p class='itemPrice'>"+price+"</p></b>");
+ 	check();
+ }
+ function remove(c){
+c.remove();
+check();
+ }
+ function check(){
+ 	var total =0;
+ 	var length = $('.itemPrice').length;
+ 	for(var i = 0 ; i < length ; i++ ) {
+ 		total+=parseInt($($('.itemPrice')[i]).html());
+ 	}
+ 	console.log(total);
+ 	if(total>0){
+ 		$("#empty-order").hide();
+ 	}else {
+ 		$("#empty-order").show();
+ 	}
+ 	var subtotal = total;
+ 	$('#subtotal').html(total);
+ 	$('#grandtotal').html(total+10)
+ }
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
