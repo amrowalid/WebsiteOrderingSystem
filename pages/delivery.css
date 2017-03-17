@@ -49,7 +49,7 @@
 }
 .card {
   border : 1px solid grey;
-    margin-bottom: 20px;
+  margin-bottom: 20px;
   padding: 0px 0px 10px 0px;
 }
 .card-info {
@@ -69,6 +69,7 @@
     padding: 0px 10px 0px 10px;
     font-weight: bold;
     margin-bottom: 7px;
+    cursor: pointer;
 }
 #menu-cards > .col-md-6 >.card > .card-price > div > span {
     background-color: lightgrey;
@@ -86,7 +87,7 @@
   
 }
 
-.empty-order {
+#empty-order {
   text-align: center;
   font-size: 1.3em;
   padding: 8px 0px;
@@ -112,4 +113,31 @@ tr:nth-child(4){
   
   font-size: 1.2em;
  
+}
+
+#ordered {
+  width: 100%;
+}
+.orderedStyle{
+  font-size: 1.0em;
+  color: grey;
+  text-align: left;
+  margin-bottom: 0px;
+  font-weight: lighter;
+  display: inline;
+}
+.itemPrice {
+  font-size: 0.9em;
+  font-weight: bold;
+  width: 100%;
+  text-align: right;
+  vertical-align: top;
+  margin-top: -13px;
+  color: black;
+}
+
+.removebtn {
+  color: red;
+  display: inline;
+  cursor: pointer;
 }
